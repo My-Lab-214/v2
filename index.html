@@ -2,8 +2,8 @@
 <html lang="en" style="scrollbar-width: none;"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editable Portfolio Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  <title>Wireframe Editable Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -11,156 +11,193 @@
     }
     body {
       margin: 0;
-      background: #f0f0f0;
+      background: #f9f9f9;
       color: #333;
       min-height: 100vh;
     }
     nav {
-      background: #2d3436;
-      color: white;
-      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      padding: 20px 40px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     nav h2 {
       margin: 0;
+      font-weight: 600;
     }
     nav ul {
       display: flex;
-      flex-wrap: wrap;
+      gap: 25px;
       list-style: none;
-      gap: 20px;
       padding: 0;
-      margin: 10px 0 0 0;
+      margin: 0;
     }
     nav ul li a {
-      color: white;
       text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 4px;
+      color: #333;
+      font-weight: 500;
     }
     nav ul li a:hover {
-      background-color: rgba(255,255,255,0.2);
+      border-bottom: 2px solid #333;
     }
     header {
-      background: #81ecec;
-      padding: 50px 20px;
       text-align: center;
+      padding: 50px 20px 20px;
+      background: white;
     }
-    section {
-      background: #202020;
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 16px;
+      color: #777;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 10px 20px;
+      background: black;
       color: white;
-      padding: 40px;
-      margin: 20px auto;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px 40px 60px;
       max-width: 1200px;
-      background-image: url('https://via.placeholder.com/1200x400');
-      background-size: cover;
-      background-position: center;
+      margin: auto;
+    }
+    .card {
+      background: #eee;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .card p {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: #555;
     }
     footer {
-      background: #dfe6e9;
       text-align: center;
-      padding: 20px;
-      color: #636e72;
+      padding: 30px;
+      color: #aaa;
+      background: white;
     }
-    .selected {
-      outline: 2px dashed #d63031;
-    }
+
+    /* Controls */
     #controls {
       position: fixed;
-      top: 80px;
-      right: 20px;
-      background: #ffffff;
+      top: 10px;
+      right: 10px;
+      background: white;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      z-index: 1000;
       display: none;
-      max-width: 250px;
     }
     #deployBtn {
       position: fixed;
-      top: 20px;
+      bottom: 20px;
       right: 20px;
-      background: #0984e3;
+      background: #000;
       color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
-      padding: 10px 16px;
+      border-radius: 8px;
       cursor: pointer;
-      z-index: 999;
+      z-index: 1000;
     }
-    #deployBtn:hover {
-      background: #003d7a;
-    }
-    label, input {
-      display: block;
-      margin-top: 10px;
-      width: 100%;
-    }
-    input[type=color], input[type=text] {
-      height: 30px;
-      padding: 5px;
-      border: 1px solid #ccc;
-    }
-    h1 {
-      font-size: 50px;
-      color: white;
-      letter-spacing: 2px;
-    }
-    #linkHref {
-      display: block;
+    .selected {
+      outline: 2px dashed red;
     }
   </style>
 </head>
 <body>
 
-
-
 <nav>
-  <h2>My Portfolio</h2>
+  <h2 class="">ACME</h2>
   <ul>
-    <li><a href="https://chatgpt.com" class="" style="background-image: none;">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://chatgpt.com" class="" style="background-image: none;">PRODUCT</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#portfolio">PORTFOLIO</a></li>
+    <li><a href="#team">TEAM</a></li>
+    <li><a href="#contact">CONTACT</a></li>
   </ul>
 </nav>
 
-<header id="home">
-  <h1>Hi, I'm Rahul</h1>
-  <p>A Frontend Developer who builds interactive, responsive web apps.</p>
+<header class="" style="background-image: url(&quot;https://images.pexels.com/photos/2397651/pexels-photo-2397651.jpeg&quot;); background-size: cover; background-position: center center;">
+  <h1 class="" style="color: rgb(255, 255, 255);">Hi, I'm Lokash S</h1>
+  <p class="" style="color: rgb(247, 247, 247);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <button>SEARCH</button>
+  </div>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I specialize in building beautiful, performant user experiences with HTML, CSS, JavaScript, and React.</p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li>Portfolio Website</li>
-    <li>ToDo App with React</li>
-    <li>E-commerce UI</li>
-  </ul>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 rahulprakash1209@gmail.com</p>
-  <p>🌐 www.youxrahul.work</p>
-</section>
+<div class="grid">
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+</div>
 
 <footer>
-  <p>© 2025 Rahul Prakash | All rights reserved.</p>
+  <p>© 2025 ACME Inc. | All rights reserved.</p>
 </footer>
 
+<!-- Controls Panel -->
 
 
+
+
+<!-- Script -->
 
 
 
