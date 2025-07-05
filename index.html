@@ -2,7 +2,7 @@
 <html lang="en" style="scrollbar-width: none;"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Editable Portfolio Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     * {
@@ -13,6 +13,7 @@
       margin: 0;
       background: #f0f0f0;
       color: #333;
+      min-height: 100vh;
     }
     nav {
       background: #2d3436;
@@ -28,10 +29,11 @@
     }
     nav ul {
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
       gap: 20px;
       padding: 0;
-      margin: 0;
+      margin: 10px 0 0 0;
     }
     nav ul li a {
       color: white;
@@ -43,50 +45,56 @@
       background-color: rgba(255,255,255,0.2);
     }
     header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: white;
-      padding: 80px 20px;
+      background: #81ecec;
+      padding: 50px 20px;
       text-align: center;
     }
     section {
-      padding: 50px 20px;
-      background: white;
+      background: #202020;
+      color: white;
+      padding: 40px;
       margin: 20px auto;
       max-width: 1200px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      background-image: url('https://via.placeholder.com/1200x400');
+      background-size: cover;
+      background-position: center;
     }
     footer {
-      background: #2d3436;
+      background: #dfe6e9;
       text-align: center;
       padding: 20px;
-      color: #b2bec3;
+      color: #636e72;
     }
     .selected {
-      outline: 2px dashed red;
-    }
-    #controls, #deployBtn {
-      position: fixed;
-      z-index: 999;
+      outline: 2px dashed #d63031;
     }
     #controls {
+      position: fixed;
       top: 80px;
       right: 20px;
-      background: #fff;
+      background: #ffffff;
       border: 1px solid #ccc;
       border-radius: 8px;
       padding: 15px;
+      z-index: 999;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       display: none;
+      max-width: 250px;
     }
     #deployBtn {
+      position: fixed;
       top: 20px;
       right: 20px;
       background: #0984e3;
       color: white;
-      padding: 10px 16px;
       border: none;
       border-radius: 5px;
+      padding: 10px 16px;
       cursor: pointer;
+      z-index: 999;
+    }
+    #deployBtn:hover {
+      background: #003d7a;
     }
     label, input {
       display: block;
@@ -98,6 +106,14 @@
       padding: 5px;
       border: 1px solid #ccc;
     }
+    h1 {
+      font-size: 50px;
+      color: white;
+      letter-spacing: 2px;
+    }
+    #linkHref {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -105,49 +121,42 @@
 
 
 <nav>
-  <h2>Lokash S</h2>
+  <h2>My Portfolio</h2>
   <ul>
-    <li><a href="#home">Home</a></li>
+    <li><a href="https://chatgpt.com" class="" style="background-image: none;">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <header id="home">
-  <h1>Hi, I'm Lokash</h1>
-  <p>Cloud &amp; Full-Stack Enthusiast | Python | Django | JavaScript</p>
+  <h1>Hi, I'm Rahul</h1>
+  <p>A Frontend Developer who builds interactive, responsive web apps.</p>
 </header>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I'm a passionate developer focused on building efficient cloud-integrated web apps. Currently developing a personal cloud app called VirtualCloud.</p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Python, Django</li>
-    <li>HTML, CSS, JavaScript</li>
-    <li>Cloudinary, GitHub, Render</li>
-  </ul>
+  <p>I specialize in building beautiful, performant user experiences with HTML, CSS, JavaScript, and React.</p>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-  <p>1. VirtualCloud - Django based personal cloud app</p>
-  <p>2. Expense Manager - HTML/CSS/JS (local storage)</p>
+  <ul>
+    <li>Portfolio Website</li>
+    <li>ToDo App with React</li>
+    <li>E-commerce UI</li>
+  </ul>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>📧 Email: lokash@email.com</p>
-  <p>🌐 Portfolio: www.yourcloudportfolio.live</p>
+  <p>📧 rahulprakash1209@gmail.com</p>
+  <p>🌐 www.youxrahul.work</p>
 </section>
 
 <footer>
-  <p>© 2025 Lokash S | All rights reserved.</p>
+  <p>© 2025 Rahul Prakash | All rights reserved.</p>
 </footer>
 
 
