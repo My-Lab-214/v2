@@ -2,7 +2,7 @@
 <html lang="en" style="scrollbar-width: none;"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editable Deploy Page</title>
+  <title>Editable Web Page with Drag, Resize, and Background Change</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     * {
@@ -77,11 +77,11 @@
       display: none;
       max-width: 250px;
     }
-    #deployBtn {
+    #downloadPage {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #00b894;
+      background: #0984e3;
       color: white;
       border: none;
       border-radius: 5px;
@@ -89,8 +89,8 @@
       cursor: pointer;
       z-index: 999;
     }
-    #deployBtn:hover {
-      background: #00775a;
+    #downloadPage:hover {
+      background: #003d7a;
     }
     label, input {
       display: block;
@@ -117,12 +117,12 @@
 </head>
 <body>
 
-<!-- Deploy Button -->
+<!-- Download Button -->
 
 
 <!-- Editable Webpage Content -->
 <nav>
-  <h2>Ediweb.com</h2>
+  <h2 class="">Ediweb.com</h2>
   <ul>
     <li>Home</li>
     <li>Services</li>
@@ -131,19 +131,23 @@
   </ul>
 </nav>
 
-<header>
-  <h1>Hi there, I'm Lokash !!!</h1>
-  <p>Click elements to edit text, change colors, update images, background images, or drag/resize.</p>
+<header class="" style="background-image: url(&quot;https://images.pexels.com/photos/2397651/pexels-photo-2397651.jpeg&quot;); background-size: cover; background-position: center center; color: white;">
+  <h1 class="">Hi there, It's&nbsp; me Lokash !!</h1>
+  <p class="">u can do what on this page can be deployed on github..</p>
 </header>
-
 <div class="container">
-<h2>Big Nature Water World</h2>
-<p>Oceans cover over 70% of Earth's surface. They absorb carbon dioxide from the atmosphere, regulate climate, and produce more than half of the planet’s oxygen...</p>
+<h2> Big Natue Water World</h2>
+<p>Oceans cover over 70% of Earth's surface. They absorb carbon dioxide from the atmosphere, regulate climate,
+ and produce more than half of the planet’s oxygen through phytoplankton photosynthesis. Marine habitats range from 
+ sunlit coral reefs and kelp forests to dark abyssal plains and hydrothermal vents. Oceans support diverse life, including 
+ fish, mammals, invertebrates, and microorganisms, many of which are vital for human food security and economies. Ocean currents 
+ distribute heat, influence weather patterns, and connect distant ecosystems. However, pollution, overfishing, acidification, 
+ and warming threaten marine biodiversity and ecological balance, highlighting the need for sustainable practices and marine 
+ conservation. They help control the weather and temperature by absorbing carbon dioxide and producing oxygen.</p>
 </div>
-
-<section>
+<section class="">
   <h2>Main Content</h2>
-  <p>You can freely customize this page. After editing, click deploy to save and publish it online.</p>
+  <p>You can freely customize this page. After editing, click download to save it permanently.</p>
   <form>
     <input type="text" value="Your Name">
     <button type="button">Submit</button>
@@ -155,6 +159,8 @@
 </footer>
 
 <!-- Edit Controls -->
+
+
 
 
 
