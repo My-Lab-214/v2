@@ -2,7 +2,7 @@
 <html lang="en" style="scrollbar-width: none;"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editable Portfolio</title>
+  <title>Wireframe Editable Template</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
   <style>
     * {
@@ -13,6 +13,7 @@
       margin: 0;
       background: #f9f9f9;
       color: #333;
+      min-height: 100vh;
     }
     nav {
       display: flex;
@@ -20,140 +21,136 @@
       align-items: center;
       padding: 20px 40px;
       background: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav h2 {
+      margin: 0;
+      font-weight: 600;
     }
     nav ul {
       display: flex;
-      list-style: none;
       gap: 25px;
+      list-style: none;
       padding: 0;
       margin: 0;
     }
-    nav a {
+    nav ul li a {
       text-decoration: none;
-      color: #000;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 20px;
+      color: #333;
+      font-weight: 500;
     }
-    nav a.active {
+    nav ul li a:hover {
+      border-bottom: 2px solid #333;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: white;
+    }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 16px;
+      color: #777;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 10px 20px;
       background: black;
       color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
     }
-    .profile-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: url('https://i.pravatar.cc/40') no-repeat center/cover;
-    }
-    section {
-      padding: 60px 40px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px 40px 60px;
       max-width: 1200px;
       margin: auto;
     }
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .hero, .work, .coachella, .about, .contact {
-      margin-bottom: 60px;
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-    }
-    .hero-content, .about-content, .contact-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px;
-    }
-    .hero-content img, .about-content img, .contact-content img {
-      max-width: 100%;
-      border-radius: 10px;
-      flex: 1 1 50%;
-    }
-    .hero-content div, .about-content div, .contact-content form {
-      flex: 1 1 40%;
-    }
-    .work-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
     .card {
-      background: #eee;
-      padding: 20px;
+      background-color: #eee;
       border-radius: 10px;
-      text-align: center;
-    }
-    .card button {
-      margin-top: 10px;
-      padding: 8px 20px;
-      background: #000;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .gallery-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding-bottom: 10px;
-    }
-    .gallery-scroll div {
-      flex: 0 0 auto;
-      width: 200px;
-      height: 150px;
-      background: #ccc;
-      border-radius: 6px;
-    }
-    .contact form {
+      min-height: 180px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      justify-content: flex-end;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      color: #1f1f1f;
+      padding: 20px;
     }
-    .contact input, .contact textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .card h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
     }
-    .contact button {
-      padding: 10px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .socials {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-    }
-    .socials a {
-      text-decoration: none;
-      color: #000;
+    .card p {
+      margin: 4px 0 0;
+      font-size: 12px;
     }
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 30px;
       color: #aaa;
-      background: #fff;
+      background: white;
     }
-    [contenteditable="true"]:focus {
-      outline: 2px dashed #444;
-      background-color: #f0f0f0;
-    }
+    #controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  z-index: 1000;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  max-width: 260px;
+  line-height: 1.6;
+}
+#controls label {
+  display: block;
+  margin-bottom: 8px;
+}
+#controls input[type="text"],
+#controls input[type="color"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 2px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+#controls button {
+  width: 100%;
+  background: #000;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
     #deployBtn {
       position: fixed;
       bottom: 20px;
@@ -166,181 +163,127 @@
       cursor: pointer;
       z-index: 1000;
     }
-  </style>
+    .selected {
+      outline: 2px dashed red;
+    }
+
+    body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+body.dark-mode nav,
+body.dark-mode header,
+body.dark-mode footer {
+  background: #1f1f1f;
+}
+body.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+body.dark-mode .card {
+  background-color: #2a2a2a;
+}
+body.dark-mode #controls {
+  background: #1f1f1f;
+  color: #eee;
+}
+body.dark-mode input,
+body.dark-mode button {
+  background: #333;
+  color: #eee;
+}
+
+#controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+#controls-header .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+#closeControls {
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+#closeControls:hover {
+  color: red;
+  transform: scale(1.1);
+}
+</style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#hero" class="active">Gallery</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#help">Help</a></li>
-    </ul>
-    <div class="profile-img"></div>
-  </nav>
 
-  <section id="hero" class="hero fade show">
-    <div class="hero-content">
-      <div>
-        <h1>Hello! I am Lokash...&nbsp;<br>and I am an Event Photographer.</h1>
-      </div>
-      <img src="https://source.unsplash.com/500x300/?camera" alt="Photographer">
-    </div>
-  </section>
+<nav>
+  <h2>ACME</h2>
+  <ul>
+    <li><a href="#product">PRODUCT</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#portfolio">PORTFOLIO</a></li>
+    <li><a href="#team">TEAM</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
 
-  <section class="work fade show">
-    <h2>Work</h2>
-    <div class="work-cards">
-      <div class="card">
-        <p>Coachella</p>
-        <button>View</button>
-      </div>
-      <div class="card">
-        <p>StudioShot</p>
-        <button>View</button>
-      </div>
-      <div class="card">
-        <p>Annual Business Conference</p>
-        <button>View</button>
-      </div>
-    </div>
-  </section>
+</nav>
 
-  <section class="coachella fade show">
-    <h2>Coachella</h2>
-    <div class="gallery-scroll">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </section>
+<header>
+  <h1 class="">Lokash</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <button>SEARCH</button>
+  </div>
+</header>
 
-  <section id="about" class="about fade show">
-    <div class="about-content">
-      <div>
-        <h2>I am passionate Photographer.</h2>
-        <p>I love reflecting emotions on photos. I started out with photography as a hobby. I would wander around the streets with my Nikon and capture absolutely raw, beautiful and unmanipulated emotions of people. Over the years, I have been able to successfully build a career out of my hobby.</p>
-      </div>
-      <img src="https://source.unsplash.com/500x300/?photography" alt="Camera">
-    </div>
-  </section>
+<h1 style="display: flex; justify-content: center;">Lorem ipsum dolor</h1>
+<div class="grid">
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+  <div class="card">
+    <h3>Lorem Ipsum</h3>
+    <p>LOREM IPSUM</p>
+  </div>
+</div>
 
-  <section id="contact" class="contact fade show">
-    <div class="contact-content">
-      <form>
-        <h2>Get in Touch!</h2>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea rows="4" placeholder="Write Message"></textarea>
-        <div>
-          <button type="submit">Ok</button>
-          <button type="reset">Cancel</button>
-        </div>
-      </form>
-      <img src="https://source.unsplash.com/500x300/?portrait" alt="Portrait">
-    </div>
-    <div class="socials">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-    </div>
-  </section>
+<footer>
+  <p>© 2025 ACME Inc. | All rights reserved.</p>
+</footer>
 
-  <footer>
-    © 2025 Vanessa Green | All rights reserved.
-  </footer>
 
-  
 
-  <script>
-    const faders = document.querySelectorAll('.fade');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    faders.forEach(el => observer.observe(el));
 
-    document.getElementById('deployBtn').addEventListener('click', async () => {
-      const username = prompt("GitHub Username:");
-      const repo = prompt("Repository Name:");
-      const token = prompt("GitHub Token:");
 
-      if (!username || !repo || !token) return alert("All fields required");
 
-      const clone = document.documentElement.cloneNode(true);
-      clone.querySelectorAll('[contenteditable]').forEach(e => e.removeAttribute('contenteditable'));
-      clone.querySelectorAll('#deployBtn').forEach(e => e.remove());
-
-      const htmlContent = `<!DOCTYPE html>\n${clone.outerHTML}`;
-      const base64 = btoa(unescape(encodeURIComponent(htmlContent)));
-      const url = `https://api.github.com/repos/${username}/${repo}/contents/index.html`;
-
-      const existing = await fetch(url, { headers: { Authorization: `token ${token}` } }).then(r => r.ok ? r.json() : null);
-
-      const res = await fetch(url, {
-        method: 'PUT',
-        headers: {
-          Authorization: `token ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          message: "Auto-update via Editable Portfolio",
-          content: base64,
-          sha: existing?.sha || undefined
-        })
-      });
-
-      if (res.ok) {
-        alert(`✅ Deployed at https://${username}.github.io/${repo}/`);
-      } else {
-        const err = await res.json();
-        alert(`❌ Failed: ${err.message}`);
-      }
-    });
-  </script>
 <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 
 
 </body></html>
