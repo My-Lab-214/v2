@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wireframe Editable Template</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -221,6 +222,60 @@ body.dark-mode button {
   color: red;
   transform: scale(1.1);
 }
+
+/* Swiper custom styles */
+.swiper {
+  width: 90%;
+  margin: auto;
+}
+.swiper-slide {
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 80px;
+  filter: grayscale(0.6);
+}
+.swiper-pagination {
+  bottom: 34px !important;
+  transform: scale(1.3);
+}
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+.swiper-slide a {
+  color: #717171;
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 6px 26px;
+  margin-top: 10px;
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.swiper-slide a:hover {
+  color: #005baa;
+}
+.swiper-slide div {
+  transition: 0.25s;
+  opacity: 0;
+}
+.swiper-slide-active div {
+  opacity: 1;
+}
+.swiper-slide--one {
+  background: url("a.jpg") no-repeat 50% 50% / cover;
+}
+.swiper-slide--two {
+  background: url("b.jpg") no-repeat 50% 50% / cover;
+}
+/* Add more backgrounds as needed */
+
+
 </style>
 </head>
 <body>
@@ -238,7 +293,7 @@ body.dark-mode button {
 </nav>
 
 <header>
-  <h1 class="">Lokash</h1>
+  <h1>Lorem ipsum dolor</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   <div class="search-box">
     <input type="text" placeholder="Search...">
@@ -274,9 +329,34 @@ body.dark-mode button {
   </div>
 </div>
 
+<section class="swiper-section" style="padding: 40px 20px;">
+  <div class="swiper swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress">
+    <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(-54.2273px, 0px, 0px);" id="swiper-wrapper-58efad2ae455b8ee" aria-live="polite"><div class="swiper-slide swiper-slide--two swiper-slide-visible swiper-slide-next swiper-slide-prev" style="width: 433.818px; transition-duration: 0ms; transform: translate3d(0px, 0px, -300px) rotateX(0deg) rotateY(30deg) scale(1); z-index: -2;" role="group" aria-label="2 / 2" data-swiper-slide-index="1">
+        <div>
+          <h2>B Class</h2>
+          <a href="#">Explore</a>
+        </div>
+      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 3; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--one swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" style="width: 433.818px; transition-duration: 0ms; transform: translate3d(0px, 0px, -0.125733px) rotateX(0deg) rotateY(-0.0125733deg) scale(1); z-index: 1;" role="group" aria-label="1 / 2" data-swiper-slide-index="0">
+        <div>
+          <h2>A Class</h2>
+          <a href="#">Explore</a>
+        </div>
+      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0.00125733; transition-duration: 0ms;"></div></div>
+      
+      
+      <!-- You can add more slides here -->
+    </div>
+    <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true"></span><span class="swiper-pagination-bullet"></span></div>
+  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+</section>
+
 <footer>
   <p>© 2025 ACME Inc. | All rights reserved.</p>
 </footer>
+
+
+
+
 
 
 
