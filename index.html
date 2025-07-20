@@ -223,7 +223,6 @@ body.dark-mode button {
   transform: scale(1.1);
 }
 
-/* Swiper custom styles */
 .swiper {
   width: 90%;
   margin: auto;
@@ -237,28 +236,8 @@ body.dark-mode button {
   border-radius: 20px;
   padding: 0 80px;
   filter: grayscale(0.6);
-}
-.swiper-pagination {
-  bottom: 34px !important;
-  transform: scale(1.3);
-}
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
-  background: #ffffff;
-}
-.swiper-slide a {
-  color: #717171;
-  background: #ffffff;
-  border-radius: 32px;
-  padding: 6px 26px;
-  margin-top: 10px;
-  font-size: 14px;
-  display: inline-block;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.swiper-slide a:hover {
-  color: #005baa;
+  color: white;
+  text-align: center;
 }
 .swiper-slide div {
   transition: 0.25s;
@@ -267,14 +246,35 @@ body.dark-mode button {
 .swiper-slide-active div {
   opacity: 1;
 }
+.swiper-slide a {
+  color: #fff;
+  background: #000;
+  border-radius: 20px;
+  padding: 6px 20px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.swiper-slide a:hover {
+  background: #444;
+}
 .swiper-slide--one {
-  background: url("a.jpg") no-repeat 50% 50% / cover;
+  background: url('https://source.unsplash.com/600x400/?nature') center center / cover no-repeat;
 }
 .swiper-slide--two {
-  background: url("b.jpg") no-repeat 50% 50% / cover;
+  background: url('https://source.unsplash.com/600x400/?city') center center / cover no-repeat;
 }
-/* Add more backgrounds as needed */
-
+.swiper-slide--three {
+  background: url('https://source.unsplash.com/600x400/?technology') center center / cover no-repeat;
+}
+.swiper-pagination {
+  bottom: 10px !important;
+  transform: scale(1.3);
+}
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  background: #ffffff;
+}
 
 </style>
 </head>
@@ -329,30 +329,37 @@ body.dark-mode button {
   </div>
 </div>
 
-<section class="swiper-section" style="padding: 40px 20px;">
+<section style="padding: 40px 0;" class="">
   <div class="swiper swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress">
-    <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(-54.2273px, 0px, 0px);" id="swiper-wrapper-58efad2ae455b8ee" aria-live="polite"><div class="swiper-slide swiper-slide--two swiper-slide-visible swiper-slide-next swiper-slide-prev" style="width: 433.818px; transition-duration: 0ms; transform: translate3d(0px, 0px, -300px) rotateX(0deg) rotateY(30deg) scale(1); z-index: -2;" role="group" aria-label="2 / 2" data-swiper-slide-index="1">
-        <div>
-          <h2>B Class</h2>
-          <a href="#">Explore</a>
-        </div>
-      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 3; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--one swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" style="width: 433.818px; transition-duration: 0ms; transform: translate3d(0px, 0px, -0.125733px) rotateX(0deg) rotateY(-0.0125733deg) scale(1); z-index: 1;" role="group" aria-label="1 / 2" data-swiper-slide-index="0">
+    <div class="swiper-wrapper" style="cursor: grab; transition-duration: 0ms; transition-delay: 0ms; transform: translate3d(-614.5px, 0px, 0px);" id="swiper-wrapper-59964f3253101f7c" aria-live="polite"><div class="swiper-slide swiper-slide--one swiper-slide-next" style="width: 491.6px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(60deg) scale(1); z-index: -5;" role="group" aria-label="1 / 3" data-swiper-slide-index="0">
         <div>
           <h2>A Class</h2>
           <a href="#">Explore</a>
         </div>
-      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0.00125733; transition-duration: 0ms;"></div></div>
+      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 6; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--two swiper-slide-visible swiper-slide-prev" style="width: 491.6px; transition-duration: 0ms; transform: translate3d(0px, 0px, -299.756px) rotateX(0deg) rotateY(29.9756deg) scale(1); z-index: -2;" role="group" aria-label="2 / 3" data-swiper-slide-index="1">
+        <div>
+          <h2>B Class</h2>
+          <a href="#">Explore</a>
+        </div>
+      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 2.99756; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div></div><div class="swiper-slide swiper-slide--three swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" style="width: 491.6px; transition-duration: 0ms; transform: translate3d(0px, 0px, -0.12205px) rotateX(0deg) rotateY(0.012205deg) scale(1); z-index: 1;" role="group" aria-label="3 / 3" data-swiper-slide-index="2">
+        <div>
+          <h2>C Class</h2>
+          <a href="#">Explore</a>
+        </div>
+      <div class="swiper-slide-shadow-left swiper-slide-shadow-coverflow" style="opacity: 0.0012205; transition-duration: 0ms;"></div><div class="swiper-slide-shadow-right swiper-slide-shadow-coverflow" style="opacity: 0; transition-duration: 0ms;"></div></div>
       
       
-      <!-- You can add more slides here -->
+      
     </div>
-    <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true"></span><span class="swiper-pagination-bullet"></span></div>
+    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 3" aria-current="true"></span></div>
   <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 </section>
+
 
 <footer>
   <p>© 2025 ACME Inc. | All rights reserved.</p>
 </footer>
+
 
 
 
