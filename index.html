@@ -2,9 +2,8 @@
 <html lang="en" style="scrollbar-width: none;"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wireframe Editable Template</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <title>Editable Web Page with Drag, Resize, and Background Change</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,374 +11,164 @@
     }
     body {
       margin: 0;
-      background: #f9f9f9;
+      background: #f0f0f0;
       color: #333;
-      min-height: 100vh;
+      height: 1500px;
     }
     nav {
+      background: #2d3436;
+      color: white;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
     }
     nav h2 {
       margin: 0;
-      font-weight: 600;
     }
     nav ul {
       display: flex;
-      gap: 25px;
+      flex-wrap: wrap;
       list-style: none;
+      gap: 20px;
       padding: 0;
-      margin: 0;
+      margin: 10px 0 0 0;
     }
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-    nav ul li a:hover {
-      border-bottom: 2px solid #333;
+    nav ul li {
+      cursor: pointer;
     }
     header {
+      background: #81ecec;
+      padding: 50px 20px;
       text-align: center;
-      padding: 50px 20px 20px;
-      background: white;
     }
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 16px;
-      color: #777;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-    .search-box {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .search-box input {
-      padding: 10px;
-      width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 4px 0 0 4px;
-      outline: none;
-    }
-    .search-box button {
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px 40px 60px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background-color: #eee;
-      border-radius: 10px;
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    section {
+      background: rgb(32, 32, 32);
+      padding: 30px;
+      max-width: 1366px;
+      margin: 20px auto;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      background-image: url('https://via.placeholder.com/900x400');
       background-size: cover;
       background-position: center;
-      overflow: hidden;
-      color: #1f1f1f;
-      padding: 20px;
-    }
-    .card h3 {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 600;
-    }
-    .card p {
-      margin: 4px 0 0;
-      font-size: 12px;
+      color: white;
     }
     footer {
+      background: #dfe6e9;
       text-align: center;
-      padding: 30px;
-      color: #aaa;
-      background: white;
-    }
-    #controls {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 15px;
-  z-index: 1000;
-  display: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-  max-width: 260px;
-  line-height: 1.6;
-}
-#controls label {
-  display: block;
-  margin-bottom: 8px;
-}
-#controls input[type="text"],
-#controls input[type="color"] {
-  width: 100%;
-  padding: 5px;
-  margin-top: 2px;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-#controls button {
-  width: 100%;
-  background: #000;
-  color: white;
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-    #deployBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #000;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
+      padding: 20px;
+      color: #636e72;
+      margin-top: 40px;
     }
     .selected {
-      outline: 2px dashed red;
+      outline: 2px dashed #d63031;
     }
-
-    body.dark-mode {
-  background: #121212;
-  color: #e0e0e0;
-}
-body.dark-mode nav,
-body.dark-mode header,
-body.dark-mode footer {
-  background: #1f1f1f;
-}
-body.dark-mode nav ul li a {
-  color: #e0e0e0;
-}
-body.dark-mode .card {
-  background-color: #2a2a2a;
-}
-body.dark-mode #controls {
-  background: #1f1f1f;
-  color: #eee;
-}
-body.dark-mode input,
-body.dark-mode button {
-  background: #333;
-  color: #eee;
-}
-
-#controls-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 0 5px;
-}
-
-#controls-header .label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-#closeControls {
-  font-size: 16px;
-  color: #666;
-  cursor: pointer;
-  user-select: none;
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-}
-
-#closeControls:hover {
-  color: red;
-  transform: scale(1.1);
-}
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1200px;
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
-  margin: 50px auto;
-}
-.carousel-card {
-  position: absolute;
-  width: 280px;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  cursor: pointer;
-}
-.carousel-card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-  z-index: 1;
-}
-.carousel-card .card-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  color: #fff;
-  text-align: center;
-}
-.carousel-card .card-content h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-.carousel-card .card-content button {
-  background: white;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-}
-.carousel-card .card-content button:hover {
-  background: #ddd;
-}
-.dots {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  width: 100%;
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0.4;
-  transition: opacity 0.3s;
-}
-.dot.active {
-  opacity: 1;
-}
-
-
-</style>
+    #controls {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+      max-width: 250px;
+    }
+    #deployBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0984e3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 16px;
+      cursor: pointer;
+      z-index: 999;
+    }
+    #deployBtn:hover {
+      background: #003d7a;
+    }
+    label, input {
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+    }
+    input[type=color], input[type=text], input[type=number] {
+      height: 30px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      letter-spacing: 5px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+    #linkHref {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <h2>ACME</h2>
-  <ul>
-    <li><a href="#product">PRODUCT</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#portfolio">PORTFOLIO</a></li>
-    <li><a href="#team">TEAM</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
 
+
+<nav>
+  <h2>MyWebsite</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <header>
-  <h1>Lorem ipsum dolor</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <div class="search-box">
-    <input type="text" placeholder="Search...">
-    <button>SEARCH</button>
-  </div>
+  <h1>Welcome to Editable Page</h1>
+  <p>Click elements to edit text, change colors, update images, background images, or drag/resize.</p>
 </header>
 
-<h1 style="display: flex; justify-content: center;">Lorem ipsum dolor</h1>
-<div class="grid">
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
-  <div class="card">
-    <h3>Lorem Ipsum</h3>
-    <p>LOREM IPSUM</p>
-  </div>
+<div class="container">
+  <h2>Big Nature Water World</h2>
+  <p>Oceans cover over 70% of Earth's surface. They absorb carbon dioxide from the atmosphere...</p>
 </div>
 
-<section id="carousel-section" class="">
-  <div class="carousel">
-    <!-- Repeat this card structure as needed -->
-    <div class="card" style="background-image: url('https://images.pexels.com/photos/3889891/pexels-photo-3889891.jpeg');">
-      <div class="card-content">
-        <h2>Model A</h2>
-        <button>Explore</button>
-      </div>
-    </div>
-    <!-- Add more cards here... -->
-    <div class="dots"></div>
-  </div>
+<section>
+  <h2>Main Content</h2>
+  <p>You can freely customize this page. After editing, click download to save it permanently.</p>
+  <form>
+    <input type="text" value="Your Name">
+    <button type="button">Submit</button>
+  </form>
 </section>
 
 <footer>
-  <p>© 2025 ACME Inc. | All rights reserved.</p>
+  <p>© 2025 Your Website | All rights reserved.</p>
 </footer>
 
 
 
 
-
-
-
-
 <!-- Code injected by live-server -->
+
 
 
 </body></html>
